@@ -1,0 +1,89 @@
+
+/* Cart.css */
+.cart-icon {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: black;
+  color: white;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 1000;
+}
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: red;
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 50%;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 320px;
+  height: 100%;
+  background: white;
+  box-shadow: -2px 0 6px rgba(0,0,0,0.2);
+  transition: right 0.3s ease;
+  z-index: 999;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.cart-drawer.open {
+  right: 0;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-items {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 1rem;
+}
+
+.cart-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.cart-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+.qty-controls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+.qty-controls button {
+  padding: 0.2rem 0.6rem;
+}
+
+.cart-footer {
+  margin-top: 1rem;
+}
+.checkout-btn {
+  display: block;
+  background: black;
+  color: white;
+  padding: 0.75rem;
+  text-align: center;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}

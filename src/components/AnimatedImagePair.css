@@ -1,0 +1,38 @@
+
+.centered-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    font-size: 4rem;
+    font-weight: bold;
+    color: #071952;
+    text-align: center;
+    max-width: 80%;
+    pointer-events: none;
+    text-shadow: #fff 1px 0 10px;
+
+    /* text-shadow: -2px -2px 0 #000, 2px -2px 0 #000,-2px 2px 0 #000,2px 2px 0 #000,-3px 0px 0 #000, 3px 0px 0 #000,0px -3px 0 #000,0px 3px 0 #000; */
+
+}
+
+.highlight-word{
+  font-size: 5rem;
+  font-weight: 900;
+   text-shadow: #fff 1px 0 10px;
+}
+    /* Responsive */
+  @media (max-width: 768px) {
+  
+    .centered-text {
+      font-size: 2.75rem;
+      padding: 1rem;
+    }
+  
+    .highlight-word {
+      display: inline-block;
+      font-size: 1.2em;
+    }
+  }
+  

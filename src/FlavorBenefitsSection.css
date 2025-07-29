@@ -1,0 +1,39 @@
+.benefits-section {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    overflow: visible;
+    height: auto; /* changed from 100vh */
+  }
+  
+  .benefits-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .benefits-container {
+      flex-direction: row;
+    }
+  }
+  
+  .benefits-left,
+  .benefits-right {
+    flex: 1;
+    aspect-ratio: 1 / 1; /* Make both sides square */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .benefits-image,
+  .benefits-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops top & bottom to fill square */
+    display: block;
+  }
+  

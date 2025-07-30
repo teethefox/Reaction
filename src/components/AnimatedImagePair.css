@@ -5,7 +5,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10000;
-    font-size: 4rem;
+    font-size: 2rem;
     font-weight: bold;
     color: #071952;
     text-align: center;
@@ -17,8 +17,40 @@
 
 }
 
+.highlight-word {
+  display: inline-block;
+  font-size: 3rem;
+}
+
+.foreground-style {
+  max-height: 100%;
+  position: absolute;
+  right: 0vw;
+  z-index: 100;
+}
+
+.foreground-style-small {
+  max-height: 100%;
+  position: absolute;
+  left: 68vw;
+  z-index: 100;
+}
+
+.background-style {
+  height: 100%;
+  position: relative;
+}
+
+.background-style-small {
+  border-style: none solid none none;
+  height: 100%;
+  position: absolute;
+  left: 15vw;
+
+}
+
 .highlight-word{
-  font-size: 5rem;
+  font-size: 3rem;
   font-weight: 900;
    text-shadow: #fff 1px 0 10px;
 }
@@ -32,7 +64,7 @@
   
     .highlight-word {
       display: inline-block;
-      font-size: 1.2em;
+      font-size: 1.2rem;
     }
   }
   

@@ -3,18 +3,6 @@
 } */
 @import "tailwindcss/preflight"
 @tailwind utilities;
-
-/* Global overflow fix for mobile */
-html, body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-/* Optional: set box-sizing for consistency */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
 /* Prevent horizontal scrolling and enforce viewport width */
 body, html, #root, .App {
   width: 100vw;
@@ -225,6 +213,17 @@ section, header, footer, .component-class {
   position: relative;
   overflow: hidden;
   background-color: #071952;
+}
+.middle-text {
+  /* position: absolute; */
+  color: #071952;
+  font-size: 3rem;
+  font-weight: bold;
+  z-index: 100;
+  text-align: center;
+  width: 100%;
+  padding-top: 10rem;
+  pointer-events: none;
 }
 
 .floating-zone-heading {

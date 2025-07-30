@@ -15,7 +15,7 @@ const imagePairs = [
     foreground: P1,
     text: (
       <>
-        A <span className='highlight-word'>groundbreaking</span> <span className='highlight-word'> functional </span><span className='highlight-word'> performance </span>  formula
+        A <span className='highlight-word'>groundbreaking</span> <span className='highlight-word'> functional </span> <span className='highlight-word'> performance </span>  formula
       </>
     ),
   },
@@ -34,9 +34,9 @@ const imagePairs = [
     foreground: P3,
     text: (
       <>
-        A <span className='highlight-word'>scientifically backed</span> alternative for 
-        <span className='highlight-word'> athletes</span>, <span className='highlight-word'> professionals</span>, and <span className='highlight-word'> health-conscious</span> consumers <br />
-        <span className='highlight-word'>- Dr. Indigo Vasquez, DMR </span>
+        A <span className='highlight-word'> scientifically backed</span> alternative for 
+         <span className='highlight-word'>  athletes</span>, <span className='highlight-word'> professionals</span>, and <span className='highlight-word'> health-conscious</span> consumers <br />
+        <span className='highlight-word'>- Dr. Indigo Vasquez</span>
       </>
     ),
   },
@@ -75,7 +75,7 @@ const AnimatedImagePair = () => {
           display: 'flex',
           alignItems: 'right',
           justifyContent: 'right',
-          position: 'relative',
+          position: 'relative'
         }}
       >
          <AnimatePresence mode="wait">
@@ -83,14 +83,7 @@ const AnimatedImagePair = () => {
             key={foreground}
             src={foreground}
             alt="Foreground"
-            className="z-10 object-contain"
-            style={{
-              // width: '300px', // fixed width foreground
-              maxHeight: '100%',
-              position: 'relative',
-              left: '725px',
-              zIndex: '10000'
-            }}
+            className="z-10 object-contain foreground-style"
             animate={{ scale: [2, 2.02, 2], rotate: [0, 5, 0] }}
             transition={{ duration: 5, repeat: Infinity }}
           />
@@ -100,14 +93,7 @@ const AnimatedImagePair = () => {
             key={background}
             src={background}
             alt="Background"
-            className="absolute top-0 left-0 w-full h-full object-cover z-0"
-            style={{
-              // width: '300px', // fixed width foreground
-              // aspectRatio: '3 / 4', // maintains a 3:4 portrait ratio
-              height: '100%',
-              position: 'relative',
-              
-            }}
+            className="absolute top-0 left-0 w-full h-full object-cover z-0 background-style"
             animate={{ scale: [2, 2.02, 2], rotate: [0, 0, 0] }}
             transition={{ duration: 5, repeat: Infinity }}
           />
@@ -125,14 +111,7 @@ const AnimatedImagePair = () => {
             key={foreground}
             src={foreground}
             alt="Foreground"
-            className="z-10 object-contain"
-            style={{
-              // width: '300px', // fixed width foreground
-              maxHeight: '100%',
-              position: 'relative',
-              left: '725px',
-              zIndex: '10000'
-            }}
+            className="z-10 object-contain foreground-style-small background-style-small"
             animate={{ scale: [1, 1.02, 1], rotate: [0, 5, 0] }}
             transition={{ duration: 5, repeat: Infinity }}
           />
@@ -143,15 +122,7 @@ const AnimatedImagePair = () => {
             key={background}
             src={background}
             alt="Background"
-            className="absolute top-0 left-0 w-full h-full object-cover z-0"
-            style={{
-              // width: '300px', // fixed width foreground
-              // aspectRatio: '3 / 4', // maintains a 3:4 portrait ratio
-              borderStyle: ' none solid none none',
-
-              height: '100%',
-              position: 'relative',
-            }}
+            className="absolute top-0 left-0 w-full h-full object-cover z-0 background-style-small"
             animate={{ scale: [1, 1.02, 1], rotate: [0, 0, 0] }}
             transition={{ duration: 5, repeat: Infinity }}
           />

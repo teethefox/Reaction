@@ -39,9 +39,9 @@ const InteractiveHeader = () => {
 
           <nav className={`reaction-nav desktop-nav ${menuOpen ? 'open' : ''}`}>
             <a href="#shop" onClick={closeMenu}>PRODUCTS</a>
-            <a href="#about" onClick={closeMenu}>ABOUT</a>
+            {/* <a href="#about" onClick={closeMenu}>ABOUT</a>
             <a href="#faqs" onClick={closeMenu}>FAQS</a>
-            <a href="#contact" onClick={closeMenu}>CONTACT</a>    
+            <a href="#contact" onClick={closeMenu}>CONTACT</a>     */}
             <a href="#cart" onClick={() => {
               setCartOpen(true);
               closeMenu();
@@ -62,9 +62,9 @@ const InteractiveHeader = () => {
             </div>
             <ul className="mobile-links">
               <li><a href="#shop" onClick={closeMenu}>PRODUCTS</a></li>
-              <li><a href="#about" onClick={closeMenu}>ABOUT</a></li>
+              {/* <li><a href="#about" onClick={closeMenu}>ABOUT</a></li>
               <li><a href="#faqs" onClick={closeMenu}>FAQS</a></li>
-              <li><a href="#contact" onClick={closeMenu}>CONTACT</a></li>
+              <li><a href="#contact" onClick={closeMenu}>CONTACT</a></li> */}
               <li><a href="#cart" onClick={() => { setCartOpen(true); closeMenu(); }}>CART {totalItems > 0 && `(${totalItems})`}</a></li>
             </ul>
           </div>

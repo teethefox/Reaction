@@ -127,23 +127,11 @@ const MainContent = ({ spawnTriggerRef }) => (
       </div>
     </ScrollRevealSection>
 
-    <div>
-      <h1
-        style={{
-          position: 'absolute',
-          color: '#071952',
-          fontSize: '4rem',
-          fontWeight: 'bold',
-          zIndex: 10000,
-          textAlign: 'center',
-          width: '100%',
-          padding: '30rem',
-          pointerEvents: 'none',
-        }}
-      >
+    <section>
+      <h1 className="middle-text">
         An elevated energy drink experience for your elevated lifestyle.
       </h1>
-    </div>
+    </section>
 
     <ScrollRevealSection>
       <section className="whitespace">

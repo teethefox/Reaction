@@ -53,6 +53,7 @@ const imagePairs = [
 
 const AnimatedImagePair = () => {
   const [index, setIndex] = useState(0);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const preloadImages = () => {
@@ -64,6 +65,17 @@ const AnimatedImagePair = () => {
       });
     };
 
+    const useIsMobile = (breakpoint = 768) => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < breakpoint);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < breakpoint);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [breakpoint]);
+
+  return isMobile;
+};
     preloadImages();
 
     const interval = setInterval(() => {
@@ -77,7 +89,7 @@ const AnimatedImagePair = () => {
 
     return (
       <>
-      {!useIsMobile ? (
+      {!isMobile ? (
       <div
         className="relative w-full overflow-hidden"
         style={{

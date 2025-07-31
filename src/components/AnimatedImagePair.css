@@ -4,12 +4,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 10000;
+    z-index: 1000;
     font-size: 2rem;
     font-weight: bold;
     color: #071952;
     text-align: center;
-    max-width: 80%;
+    max-width: 90%;
     pointer-events: none;
     text-shadow: #fff 1px 0 10px;
 
@@ -58,13 +58,40 @@
   @media (max-width: 768px) {
   
     .centered-text {
-      font-size: 2.75rem;
-      padding: 1rem;
+      font-size: 2.5rem;
+      /* padding: 1rem; */
     }
   
     .highlight-word {
       display: inline-block;
-      font-size: 1.2rem;
+      font-size: 2rem;
     }
+/* 
+    .foreground-style {
+      max-height: 100%;
+      position: absolute;
+      right: 0vw;
+      z-index: 100;
+    }
+    
+    .foreground-style-small {
+      max-height: 100%;
+      position: absolute;
+      left: 68vw;
+      z-index: 100;
+    }
+    
+    .background-style {
+      height: 100%;
+      position: relative;
+    }
+    
+    .background-style-small {
+      border-style: none solid none none;
+      height: 100%;
+      position: absolute;
+      left: 15vw;
+    
+    } */
   }
   

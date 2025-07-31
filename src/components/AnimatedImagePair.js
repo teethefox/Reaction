@@ -7,6 +7,14 @@ import BG1 from '../assets/P1_BAckground.png';
 import BG2 from '../assets/P2_Background.png';
 import BG3 from '../assets/P3_background.png';
 import './AnimatedImagePair.css';
+import useIsMobile from './IsMobile';
+// const useIsMobile = (breakpoint = 768) => {
+//   const [isMobile, setIsMobile] = useState(window.innerWidth < breakpoint);
+//     const handleResize = () => setIsMobile();
+//     window.addEventListener('resize', handleResize);
+//     console.log(isMobile)
+//   return isMobile
+// };
 
 const textStyle= { fontSize: '5rem', fontWeight: '900', textShadow: '#fff 1px 0 10px' }
 const imagePairs = [
@@ -15,7 +23,7 @@ const imagePairs = [
     foreground: P1,
     text: (
       <>
-        A <span className='highlight-word'>groundbreaking</span> <span className='highlight-word'> functional </span> <span className='highlight-word'> performance </span>  formula
+        A <span className='highlight-word'> groundbreaking</span> <span className='highlight-word'> functional </span> <span className='highlight-word'> performance </span>  formula
       </>
     ),
   },
@@ -24,8 +32,8 @@ const imagePairs = [
     foreground: P2,
     text: (
       <>
-        <span className='highlight-word'>Clean, long-lasting energy</span><br />
-        <span className='highlight-word'>enhanced</span> cognitive performance, and <span className='highlight-word'>optimized</span> recovery.
+        <span className='highlight-word'> Clean, long-lasting energy</span><br />
+        <span className='highlight-word'> enhanced</span> cognitive performance <br /> and <span className='highlight-word'>optimized</span> recovery.
       </>
     ),
   },
@@ -35,7 +43,7 @@ const imagePairs = [
     text: (
       <>
         A <span className='highlight-word'> scientifically backed</span> alternative for 
-         <span className='highlight-word'>  athletes</span>, <span className='highlight-word'> professionals</span>, and <span className='highlight-word'> health-conscious</span> consumers <br />
+         <span className='highlight-word'>  athletes,</span> <span className='highlight-word'> professionals,</span> and <span className='highlight-word'> health-conscious</span> consumers <br />
         <span className='highlight-word'>- Dr. Indigo Vasquez</span>
       </>
     ),
@@ -68,6 +76,8 @@ const AnimatedImagePair = () => {
   const { background, foreground, text } = imagePairs[index];
 
     return (
+      <>
+      {!useIsMobile ? (
       <div
         className="relative w-full overflow-hidden"
         style={{
@@ -106,6 +116,7 @@ const AnimatedImagePair = () => {
 </AnimatePresence>
 
 
+<>
         <AnimatePresence mode="wait">
           <motion.img
             key={foreground}
@@ -127,11 +138,55 @@ const AnimatedImagePair = () => {
             transition={{ duration: 5, repeat: Infinity }}
           />
         </AnimatePresence>
-
-       
+        </>
    
-      </div>
-    
+      </div>) : (
+
+<div
+className="relative w-full overflow-hidden"
+style={{
+  height: '100%',
+  display: 'flex',
+  alignItems: 'right',
+  justifyContent: 'right',
+  position: 'relative'
+}}
+>
+<AnimatePresence mode="wait">
+<div
+className='centered-text'>
+{text}
+</div>
+</AnimatePresence>
+
+
+<>
+<AnimatePresence mode="wait">
+  <motion.img
+    key={foreground}
+    src={foreground}
+    alt="Foreground"
+    className="z-10 object-contain foreground-style-small background-style-small"
+    animate={{ scale: [1.5, 1.52, 1.5], rotate: [0, 5, 0] }}
+    transition={{ duration: 5, repeat: Infinity }}
+  />
+  
+</AnimatePresence>
+<AnimatePresence mode="wait">
+  <motion.img
+    key={background}
+    src={background}
+    alt="Background"
+    className="absolute top-0 left-0 w-full h-full object-cover z-0 background-style-small"
+    animate={{ scale: [1.5, 1.52, 1.5], rotate: [0, 0, 0] }}
+    transition={{ duration: 5, repeat: Infinity }}
+  />
+</AnimatePresence>
+</>
+
+</div>)     
+    }
+    </>
   );
 };
 

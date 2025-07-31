@@ -20,7 +20,7 @@ const InteractiveHeader = () => {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <>
+    <>         {!menuOpen && (
       <header className={`reaction-header ${scrolled ? 'scrolled' : ''}`}>
         <div className="reaction-header__content">
           <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
@@ -36,6 +36,7 @@ const InteractiveHeader = () => {
               <img src={logo} alt="Logo" />
             </a>
           </div>
+ 
 
           <nav className={`reaction-nav desktop-nav ${menuOpen ? 'open' : ''}`}>
             <a href="#shop" onClick={closeMenu}>PRODUCTS</a>
@@ -47,10 +48,10 @@ const InteractiveHeader = () => {
               closeMenu();
             }}>CART</a>
           </nav>
-
+         
         </div>
       </header>
-
+ )}
       {menuOpen && (
         <div className="mobile-menu-overlay">
           <div className="mobile-menu">

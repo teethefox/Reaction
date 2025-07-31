@@ -3,18 +3,6 @@
     inset: 0;
     z-index: 100;
   }
-  .product-modal-panel {
-    width: 95vw;
-    padding: 1.5rem;
-  }
-  
-  @media (min-width: 768px) {
-    .product-modal-panel {
-      width: 70%;
-      padding: 2rem;
-    }
-  }
-  
   
   .product-modal-overlay {
     position: fixed;
@@ -29,25 +17,34 @@
     align-items: center;
     justify-content: center;
     padding: 1rem;
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
   
+  /* Modal Panel */
   .product-modal-panel {
     background: white;
     border-radius: 1rem;
-    width: 90%;
+    width: 95vw;
     max-width: 900px;
-    padding: 2rem;
+    padding: 1.5rem;
     max-height: 90vh;
     overflow-y: auto;
     font-family: 'Helvetica Neue', sans-serif;
+    margin-top: 4rem; /* pushes it below the header */
+    box-sizing: border-box;
   }
   
+  /* Desktop overrides */
   @media (min-width: 768px) {
     .product-modal-panel {
       width: 70%;
+      padding: 2rem;
+      margin-top: 0;
     }
   }
   
+  /* Content Styling */
   .product-modal-image {
     width: 100%;
     max-height: 400px;
@@ -65,6 +62,7 @@
     display: flex;
     gap: 1rem;
     margin-bottom: 1rem;
+    flex-wrap: wrap;
   }
   
   .tab-button {
@@ -92,6 +90,8 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
   
   .quantity-selector {
@@ -117,6 +117,8 @@
     display: flex;
     justify-content: space-between;
     margin-top: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
   
   .add-to-cart-button {
@@ -127,6 +129,7 @@
     font-size: 1rem;
     font-weight: bold;
     border: none;
+    cursor: pointer;
   }
   
   .shopify-link {
